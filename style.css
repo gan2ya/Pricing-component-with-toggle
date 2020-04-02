@@ -1,0 +1,206 @@
+/*font-family: 'Montserrat', sans-serif;*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+    max-width: 1440px;
+    height: 100vh;
+    background: left bottom no-repeat url(images/bg-bottom.svg), right top no-repeat url(images/bg-top.svg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    margin: 0 auto;
+
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+}
+.attribution{
+    position: absolute;
+    bottom:10px;
+    margin-bottom:10px;
+}
+.check_pricing{
+    margin-bottom: 40px;
+    text-align: center;
+}
+.toggle_box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.check_pricing h1{
+    margin-bottom: 20px;
+    color: hsl(233, 13%, 49%);
+}
+.toggle_box span{
+    color:hsl(234, 14%, 74%);
+    display: block;
+}
+
+
+.pricing_list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+}
+.pricing{
+    padding: 50px 40px;
+    width: 30%;
+    box-shadow: 0px 1px 2px  hsl(236, 72%, 79%);
+    background-color: hsl(240, 78%, 98%);
+    text-align: center;
+    color: hsl(232, 13%, 33%);
+}
+
+.pricing>div{
+    border-bottom: 1px solid hsl(234, 14%, 74%) ;
+    padding: 10px 0;
+}
+
+.pricing.center>div{
+    border-color: hsl(236, 72%, 79%) ;
+}
+
+
+.pricing.left,.pricing.center{
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+.pricing.right,.pricing.center{
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+.pricing.center{
+    background-image: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    color:hsl(240, 78%, 98%);
+    padding: 70px 40px;
+}
+
+
+.pricing .price{
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.price .monthly, .price .annually{
+    font-size: 48px;
+}
+.pricing button{
+    width: 100%;
+    margin-top:40px;
+    outline: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    background-image: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    color:hsl(240, 78%, 98%);
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: 15px;
+    border: 1px solid transparent;
+    background-clip: padding-box;
+}
+.pricing button:hover{
+    background-image:none;
+    background-color: transparent;
+    color: hsl(237, 63%, 64%);
+    border-color: hsl(232, 13%, 33%);
+}
+
+.pricing.center button{
+   background-image: none;
+    background-color: hsl(240, 78%, 98%);
+    color: hsl(237, 63%, 64%);
+}
+.pricing.center button:hover{
+    background-image:none;
+    background-color: transparent;
+    color:hsl(240, 78%, 98%);
+    border-color:hsl(240, 78%, 98%);
+}
+
+
+
+/*Toggle*/
+
+.toggle{
+    position: relative;
+    width: 70px;
+    height: 34px;
+    display: inline-block;
+    margin: 0 15px
+}
+input{
+    width: 0;
+    height: 0;
+    opacity: 0;;
+}
+.slider{
+    width: 100%;
+    height: 100%;
+    border-radius: 34px;
+    background-image: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    position: absolute;
+    top:0;
+    left:0;
+    transition: 0.4s;
+}
+.slider::before{
+    content:'';
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    top:4px;
+    left:4px;
+    background-color: hsl(240, 78%, 98%);
+    transition: 0.4s;
+}
+
+input:checked + .slider::before{
+    
+    transform: translateX(36px);
+}
+
+@media (max-width:768px){
+
+    body{
+        min-width: 375px;
+        height: auto;
+       
+    }
+    .attribution{
+        position: relative;
+        margin-bottom:10px;
+    }
+    .check_pricing{
+        margin: 40px;
+    }
+    .pricing_list{
+        flex-direction: column;      
+    }
+    .pricing{
+        width: 80%;
+        border-radius: 15px;
+        margin-bottom: 20px;
+    }
+    .pricing.center{
+        padding: 50px 40px;
+    }
+
+}
